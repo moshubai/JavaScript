@@ -165,14 +165,34 @@ var arr = {
     name: '墨书白',
     age: "27",
     say: function () {
-        console.log('检查this的指向',this, this.name); //log
+        console.log('检查this的指向', this, this.name); //log
     }
 }
 var bNarr = Object.create(arr, {
-    name:{
-        value:'墨书白2'
+    name: {
+        value: '墨书白2'
     },
 })
 console.log('bNarr', bNarr); //log
 console.log('bNarr.name', bNarr.name); //log
 bNarr.say()
+
+//  柯里化(闭包实现)
+console.log('%c柯里化', 'color: #43bb88;font-size: 24px;font-weight: bold;text-decoration: none;');
+
+add = (x) => (y) => x + y
+console.log('add(1)(2)', add(1)(2)); //log
+
+
+var addFn = function (x) {
+    return function (y) {
+        return x + y
+    }
+}
+
+var increment = addFn(1);
+var addTen = addFn(10)
+// increment(2)
+// addTen(10)
+console.log('increment(2)', increment(2)); //log
+console.log('addTen(10)', addTen(2)); //log

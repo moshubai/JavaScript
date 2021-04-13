@@ -196,3 +196,27 @@ var addTen = addFn(10)
 // addTen(10)
 console.log('increment(2)', increment(2)); //log
 console.log('addTen(10)', addTen(2)); //log
+
+console.log('%casync await', 'color: #43bb88;font-size: 24px;font-weight: bold;text-decoration: none;');
+
+
+let fnc = async function () {
+    console.log('1'); //xu-log
+};
+
+(async function a(params) {
+
+    try {
+        await fn2()
+
+    } catch (error) {
+        console.log(error); //xu-log
+        await fnc()
+    }
+    console.log('2'); //xu-log
+
+})();
+
+
+console.log('3'); //xu-log
+
